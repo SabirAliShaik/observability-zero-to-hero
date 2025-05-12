@@ -5,7 +5,7 @@
   
 ## OpenTelemetry Architecture
 - OpenTelemetry offers a unified standard for observability across multiple tools and vendors, unlike other libraries that may focus only on a specific aspect like tracing or metrics.
-- 
+
 ![OpenTelemetry_arch](https://github.com/user-attachments/assets/f75132ff-5a77-4346-adfa-bcb6bcfd5ec8)
 
 
