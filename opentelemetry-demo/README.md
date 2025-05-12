@@ -1,11 +1,10 @@
 ## OpenTelemetry
 - OpenTelemetry is an observability framework and toolkit designed to facilitiate the generation, Export, and Collection of telemetry data such as (traces, metrics, logs).
-  OpenTelemetry is a Cloud Native Computing Foundation (CNCF) project that is the result of a merger between two prior projects, OpenTracing and OpenCensus. Both of these projects were created to solve the same problem: the lack of a standard for how to instrument code and send telemetry data to an Observability backend. As neither project was fully able to solve the problem independently, they merged to form OpenTelemetry and combine their strengths while offering a single solution.
-  OpenTelemetry is Open source, as well as vendor- and tool-agnostic. it is not an observability backend itself.
+- OpenTelemetry is a Cloud Native Computing Foundation (CNCF) project that is the result of a merger between two prior projects, OpenTracing and OpenCensus. Both of these projects were created to solve the same problem: the lack of a standard for how to instrument code and send telemetry data to an Observability backend. As neither project was fully able to solve the problem independently, they merged to form OpenTelemetry and combine their strengths while offering a single solution.
+- OpenTelemetry is Open source, as well as vendor- and tool-agnostic. it is not an observability backend itself.
   
 ## OpenTelemetry Architecture
 - OpenTelemetry offers a unified standard for observability across multiple tools and vendors, unlike other libraries that may focus only on a specific aspect like tracing or metrics.
-
 
 ### 🖥️ Step 1: Create EKS Cluster
 
@@ -43,12 +42,10 @@ aws eks update-kubeconfig --name observability
 
 ### Step 2: Install OpenTelemetry otel-demo project using Helm
 
-```bash
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 
 helm install my-otel-demo open-telemetry/opentelemetry-demo
 
-```
 ### Step 3: Verify the pods 
 
 $kubectl get pods
@@ -57,9 +54,8 @@ Note: You need to wait for 5 mins till all pods are up and running
 
 ### Step 4: Access the application frontend service by port-forwarding
 
-```bash
 kubectl port-forward svc/forntend-proxy 8080:80 -n default
-```
+
 ### Step 5: Add data in application
 Access the application url : http://127.0.0.1:8080 and add items to cart and complete the order. This is to generate some data so that we can view the traces the Jaeger.
 
@@ -77,4 +73,5 @@ We should be able to see dashboards created by this demo project by default in G
 ```bash
 helm uninstall my-otel-demo
 eksctl delete cluster --name observability
+
 ```
